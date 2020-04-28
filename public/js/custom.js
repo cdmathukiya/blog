@@ -78,7 +78,6 @@ $(document).ready(function() {
                 } else if (result["status"] == "success") {
                     form[0].reset();
                     form.find('.submit_notification').html('<span class="text-success error">' + result.message + '</span>');
-                    $('#postModal').modal('close');
                     loadTable();
                 }
             },
@@ -144,7 +143,7 @@ function loadTable() {
             $("#load_table").html(data);
         },
         error: function(xhr, status, result) {
-            $("#load_table").html(data);
+            $("#load_table").html(result);
         }
     });
  }
